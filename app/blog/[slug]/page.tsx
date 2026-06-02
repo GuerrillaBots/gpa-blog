@@ -65,14 +65,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <ViewCounter slug={slug} />
           </div>
 
-          <div className="h-px bg-[#d0cbbf] mb-6" />
+          <div className="h-px bg-[#d0cbbf] mb-8" />
 
-          {/* Author */}
-          <AuthorBadge />
-
-          {/* Hero image */}
+          {/* Hero image — right after title/meta */}
           {post.hasHero && (
-            <div className="mb-8 rounded-xl overflow-hidden">
+            <div className="mb-10 rounded-xl overflow-hidden">
               <Image
                 src={`/images/posts/${slug}/hero.png`}
                 alt={post.title}
@@ -89,8 +86,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <MDXRemote source={post.content} />
           </div>
 
-          {/* Footer */}
-          <div className="mt-14 pt-6 border-t border-[#d0cbbf] flex items-center justify-between">
+          {/* Author — at the bottom */}
+          <AuthorBadge />
+
+          {/* Footer nav */}
+          <div className="mt-8 pt-6 border-t border-[#d0cbbf] flex items-center justify-between">
             <a href="/" className="text-sm font-semibold text-[#8b9b6a] hover:text-[#1a2a12] transition-colors">
               ← All posts
             </a>
