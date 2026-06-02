@@ -19,11 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   let post;
-  try {
-    post = getPost(slug);
-  } catch {
-    notFound();
-  }
+  try { post = getPost(slug); } catch { notFound(); }
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-14">
@@ -31,39 +27,45 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         {/* Article */}
         <article>
-          {/* Back */}
-          <a
-            href="/"
-            className="inline-block mb-8 text-xs text-[#6b7a55] hover:text-[#8b9b6a] transition-colors"
-          >
+          <a href="/" className="inline-block mb-8 text-xs font-semibold text-[#8b9b6a] hover:text-[#1a2a12] transition-colors">
             ← All posts
           </a>
 
-          {/* Header */}
-          <div className="mb-10">
-            <div className="flex items-center gap-3 mb-4 text-xs text-[#6b7a55]">
-              <time>
-                {new Date(post.date).toLocaleDateString("en-IN", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </time>
-              <span className="text-[#2d4020]">·</span>
-              <span>{post.readTime} min read</span>
-              <span className="text-[#2d4020]">·</span>
-              <ViewCounter slug={slug} />
+          {/* Tag + meta */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="inline-flex items-center border border-[#c8c3b8] rounded-full px-3 py-0.5">
+              <span
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                className="text-xs font-semibold tracking-widest uppercase text-[#8b9b6a]"
+              >
+                GPA Files
+              </span>
             </div>
-
-            <h1
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              className="text-3xl font-bold leading-tight text-[#e8e4d8] tracking-tight mb-4"
-            >
-              {post.title}
-            </h1>
-            <p className="text-[#8a9a72] text-base leading-relaxed">{post.excerpt}</p>
-            <div className="mt-6 h-px bg-[#2d4020]" />
           </div>
+
+          {/* Title */}
+          <h1
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-3xl sm:text-4xl font-bold leading-tight text-[#1a2a12] tracking-tight mb-4"
+          >
+            {post.title}
+          </h1>
+          <p className="text-[#6b7a55] text-base leading-relaxed mb-4">{post.excerpt}</p>
+
+          {/* Meta row */}
+          <div className="flex items-center gap-3 text-xs text-[#8b9b6a] mb-2">
+            <time>
+              {new Date(post.date).toLocaleDateString("en-IN", {
+                day: "numeric", month: "long", year: "numeric",
+              })}
+            </time>
+            <span className="text-[#c8c3b8]">·</span>
+            <span>{post.readTime} min read</span>
+            <span className="text-[#c8c3b8]">·</span>
+            <ViewCounter slug={slug} />
+          </div>
+
+          <div className="h-px bg-[#d0cbbf] mb-6" />
 
           {/* Author */}
           <AuthorBadge />
@@ -88,13 +90,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
 
           {/* Footer */}
-          <div className="mt-14 pt-6 border-t border-[#2d4020] flex items-center justify-between">
-            <a href="/" className="text-sm text-[#6b7a55] hover:text-[#8b9b6a] transition-colors">
+          <div className="mt-14 pt-6 border-t border-[#d0cbbf] flex items-center justify-between">
+            <a href="/" className="text-sm font-semibold text-[#8b9b6a] hover:text-[#1a2a12] transition-colors">
               ← All posts
             </a>
             <a
               href="https://guerrillabots.com"
-              className="text-sm text-[#6b7a55] hover:text-[#8b9b6a] transition-colors"
+              className="text-sm font-semibold text-[#8b9b6a] hover:text-[#1a2a12] transition-colors"
             >
               guerrillabots.com →
             </a>
@@ -102,41 +104,39 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </article>
 
         {/* Sidebar */}
-        <aside className="hidden lg:flex flex-col gap-5 pt-14">
+        <aside className="hidden lg:flex flex-col gap-5 pt-16">
           <div className="sticky top-8 flex flex-col gap-5">
-            <div className="rounded-xl border border-[#2d4020] bg-[#141f0e] p-4">
+            <div className="rounded-xl border border-[#d0cbbf] bg-[#e8e4d8] p-4">
               <p
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                className="text-xs font-semibold tracking-widest uppercase text-[#8b9b6a] mb-3"
+                className="text-xs font-bold tracking-widest uppercase text-[#8b9b6a] mb-3"
               >
                 About GPA
               </p>
-              <p className="text-xs text-[#8a9a72] leading-relaxed">
-                Guerrilla Process Automation — business-driven automation, governed by IT, without the 18-month wait.
+              <p className="text-xs text-[#6b7a55] leading-relaxed">
+                Business-driven automation, governed by IT, without the 18-month wait.
               </p>
               <a
                 href="https://guerrillabots.com"
-                className="mt-3 inline-block text-xs text-[#8b9b6a] hover:text-[#c8d94b] transition-colors"
+                className="mt-3 inline-block text-xs font-semibold text-[#1a2a12] hover:text-[#5a7a3a] transition-colors"
               >
                 Learn more →
               </a>
             </div>
 
-            <div className="rounded-xl border border-[#2d4020] bg-[#141f0e] p-4">
+            <div className="rounded-xl border border-[#d0cbbf] bg-[#e8e4d8] p-4">
               <p
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                className="text-xs font-semibold tracking-widest uppercase text-[#8b9b6a] mb-3"
+                className="text-xs font-bold tracking-widest uppercase text-[#8b9b6a] mb-3"
               >
                 Subscribe
               </p>
-              <p className="text-xs text-[#8a9a72] leading-relaxed mb-3">
-                Longer essays on Substack. Free.
-              </p>
+              <p className="text-xs text-[#6b7a55] leading-relaxed mb-3">Longer essays. Free.</p>
               <a
                 href="https://guerrillabots.substack.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center text-xs font-semibold py-2 px-3 rounded-lg bg-[#1b2f1a] border border-[#2d4020] text-[#a8b885] hover:border-[#8b9b6a] hover:text-[#c8d94b] transition-all"
+                className="block text-center text-xs font-bold py-2 px-3 rounded-lg bg-[#1b2f1a] text-[#f0ede5] hover:bg-[#243d22] transition-colors"
               >
                 Substack →
               </a>

@@ -12,7 +12,7 @@ export default function ViewCounter({ slug }: { slug: string }) {
 
   if (views === null) return null;
   return (
-    <span className="text-sm text-[#6b7a5a]">
+    <span className="text-xs text-[#8b9b6a]">
       {views.toLocaleString()} {views === 1 ? "view" : "views"}
     </span>
   );

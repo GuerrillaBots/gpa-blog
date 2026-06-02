@@ -2,21 +2,23 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0d1509;
-  --surface: #141f0e;
-  --border: #2d4020;
+  --bg: #f0ede5;
+  --bg-card: #e8e4d8;
+  --bg-tag: #e2ddd4;
+  --border: #d0cbbf;
+  --text-head: #1a2a12;
+  --text-body: #2e3a20;
+  --text-muted: #6b7a55;
   --sage: #8b9b6a;
-  --sage-light: #a8b885;
   --military: #1b2f1a;
-  --cream: #e8e4d8;
-  --muted: #8a9a72;
-  --muted-dim: #6b7a55;
-  --accent: #c8d94b;
+  --military-hover: #243d22;
+  --cream: #f5f0e8;
+  --accent: #5a7a3a;
 }
 
 body {
   background: var(--bg);
-  color: var(--cream);
+  color: var(--text-body);
   font-family: "Inter", sans-serif;
   font-size: 17px;
   line-height: 1.75;
@@ -25,20 +27,21 @@ body {
 
 h1, h2, h3, h4 {
   font-family: "Space Grotesk", sans-serif;
-  color: var(--cream);
+  color: var(--text-head);
 }
 
+/* Blog prose */
 .prose p {
   margin-bottom: 1.5rem;
-  color: #d4d0c4;
+  color: #3a4a28;
 }
 
 .prose h2 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
-  color: var(--cream);
+  color: var(--text-head);
   letter-spacing: -0.01em;
 }
 
@@ -47,18 +50,21 @@ h1, h2, h3, h4 {
   padding-left: 1.25rem;
   margin: 2rem 0;
   font-size: 1.05rem;
-  color: var(--sage-light);
+  color: var(--military);
   font-style: italic;
+  background: var(--bg-card);
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .prose a {
-  color: var(--sage-light);
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .prose strong {
-  color: var(--cream);
+  color: var(--text-head);
   font-weight: 600;
 }
 
