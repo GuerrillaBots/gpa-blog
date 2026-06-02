@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 const postsDir = path.join(process.cwd(), "content/posts");
+const publicDir = path.join(process.cwd(), "public");
 
 export interface PostMeta {
   slug: string;
@@ -15,6 +16,7 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
   content: string;
+  hasHero: boolean;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -40,6 +42,7 @@ export function getPost(slug: string): Post {
   const raw = fs.readFileSync(path.join(postsDir, `${slug}.mdx`), "utf-8");
   const { data, content } = matter(raw);
   const wordCount = content.split(/\s+/).length;
+  const hasHero = fs.existsSync(path.join(publicDir, "images", "posts", slug, "hero.png"));
   return {
     slug,
     title: data.title,
@@ -48,5 +51,6 @@ export function getPost(slug: string): Post {
     readTime: Math.ceil(wordCount / 200),
     pillar: data.pillar,
     content,
+    hasHero,
   };
 }

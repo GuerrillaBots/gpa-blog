@@ -2,7 +2,9 @@ import { getPost, getAllPosts } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import ViewCounter from "@/components/ViewCounter";
 import ReactionToast from "@/components/ReactionToast";
+import AuthorBadge from "@/components/AuthorBadge";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -62,6 +64,23 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <p className="text-[#8a9a72] text-base leading-relaxed">{post.excerpt}</p>
             <div className="mt-6 h-px bg-[#2d4020]" />
           </div>
+
+          {/* Author */}
+          <AuthorBadge />
+
+          {/* Hero image */}
+          {post.hasHero && (
+            <div className="mb-8 rounded-xl overflow-hidden">
+              <Image
+                src={`/images/posts/${slug}/hero.png`}
+                alt={post.title}
+                width={1200}
+                height={630}
+                className="w-full"
+                priority
+              />
+            </div>
+          )}
 
           {/* Body */}
           <div className="prose max-w-none">

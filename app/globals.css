@@ -66,3 +66,9 @@ h1, h2, h3, h4 {
   border-color: var(--border);
   margin: 2.5rem 0;
 }
+
+.prose img {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 2rem 0;
+}

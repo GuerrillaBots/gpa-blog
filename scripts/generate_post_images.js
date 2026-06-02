@@ -27,7 +27,7 @@ if (fs.existsSync(envPath)) {
 const GEMINI_KEY = process.env.GEMINI_KEY;
 if (!GEMINI_KEY) { console.error('GEMINI_KEY missing in .env.local'); process.exit(1); }
 
-const MODEL  = 'gemini-2.0-flash-preview-image-generation';
+const MODEL  = 'gemini-3.1-flash-image-preview';
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_KEY}`;
 
 const [,, slug, title, hook] = process.argv;
