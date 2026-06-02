@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enables reading .mdx files
+  pageExtensions: ["ts", "tsx", "mdx"],
 };
 
 export default nextConfig;

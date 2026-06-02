@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GPA Blog — guerrillaprocessautomation.com
 
-## Getting Started
+The official blog for [Guerrilla Process Automation (GPA)](https://guerrillabots.com) — writing on automation's last mile, the future of intelligent automation CoEs, and the people RPA forgot.
 
-First, run the development server:
+Built with Next.js + MDX. Deployed on Vercel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Adding a post
+
+Create a new `.mdx` file in `content/posts/`:
+
+```
+content/posts/your-post-slug.mdx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Required frontmatter:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```yaml
+---
+title: "Your Post Title"
+date: "2026-06-02"
+excerpt: "One line that appears in the post list and meta description."
+pillar: "optional-pillar-tag"
+---
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Push to `main` → Vercel auto-deploys.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Local dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cp .env.local.example .env.local
+# Fill in Upstash credentials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+## Environment variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Variable | Where to get it |
+|---|---|
+| `UPSTASH_REDIS_REST_URL` | [upstash.com](https://upstash.com) → Create DB → REST API |
+| `UPSTASH_REDIS_REST_TOKEN` | Same place |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Set these in Vercel project settings under Environment Variables.
+
+---
+
+## Stack
+
+- **Next.js 16** (App Router)
+- **MDX** via `next-mdx-remote`
+- **Upstash Redis** — view counts + thumbs up/down reactions
+- **Tailwind CSS** — brand theme (military green + cream)
+- **Vercel** — hosting + auto-deploy
