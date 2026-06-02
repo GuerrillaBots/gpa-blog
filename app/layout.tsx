@@ -14,23 +14,29 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col bg-[#0a0f07] text-[#e8e4d8]">
-        <header className="border-b border-[#1e2e12] px-6 py-4">
-          <div className="mx-auto max-w-2xl flex items-center justify-between">
-            <a href="/" className="font-['Space_Grotesk',sans-serif] text-sm font-600 tracking-wide text-[#8b9b6a] uppercase">
+      <body className="min-h-full flex flex-col bg-[#0d1509] text-[#e8e4d8]">
+        <header className="border-b border-[#2d4020] px-6 py-4">
+          <div className="mx-auto max-w-5xl flex items-center justify-between">
+            <a
+              href="/"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              className="text-sm font-semibold tracking-widest text-[#8b9b6a] uppercase"
+            >
               Guerrilla Process Automation
             </a>
             <a
               href="https://guerrillabots.com"
-              className="text-xs text-[#6b7a5a] hover:text-[#8b9b6a] transition"
+              className="text-xs text-[#6b7a55] hover:text-[#8b9b6a] transition-colors"
             >
               guerrillabots.com →
             </a>
           </div>
         </header>
+
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-[#1e2e12] px-6 py-6 mt-16">
-          <div className="mx-auto max-w-2xl text-xs text-[#4a5a3a]">
+
+        <footer className="border-t border-[#2d4020] px-6 py-6 mt-16">
+          <div className="mx-auto max-w-5xl text-xs text-[#4a5a35]">
             © {new Date().getFullYear()} Guerrilla Bots. Built for the last mile.
           </div>
         </footer>

@@ -2,13 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0a0f07;
-  --surface: #0f1a0a;
-  --border: #1e2e12;
+  --bg: #0d1509;
+  --surface: #141f0e;
+  --border: #2d4020;
   --sage: #8b9b6a;
+  --sage-light: #a8b885;
   --military: #1b2f1a;
   --cream: #e8e4d8;
-  --muted: #6b7a5a;
+  --muted: #8a9a72;
+  --muted-dim: #6b7a55;
   --accent: #c8d94b;
 }
 
@@ -32,7 +34,7 @@ h1, h2, h3, h4 {
 }
 
 .prose h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
@@ -44,13 +46,13 @@ h1, h2, h3, h4 {
   border-left: 3px solid var(--sage);
   padding-left: 1.25rem;
   margin: 2rem 0;
-  font-size: 1.1rem;
-  color: var(--sage);
+  font-size: 1.05rem;
+  color: var(--sage-light);
   font-style: italic;
 }
 
 .prose a {
-  color: var(--sage);
+  color: var(--sage-light);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
