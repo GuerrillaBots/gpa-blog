@@ -23,35 +23,33 @@ Then something happened. The backlog stopped shrinking.
 
 Automation requests pile up faster than the CoE can deliver. Every process that gets automated surfaces three more requests. Demand scales exponentially. Headcount scales linearly. By the time a request gets scoped, prioritised, resourced, and built — if it survives reprioritisation at all — the business has often moved on or built a manual workaround. The queue isn't a waiting room. It's where requests go to die quietly.
 
-And here's the part nobody talks about openly: a significant chunk of your CoE's capacity isn't building new automation — it's maintaining what's already running. Bots built on screen coordinates break when vendor UIs update. Every quarter, something needs patching. The CoE that was supposed to clear your backlog is busy keeping last year's automations alive.
-
-RPA works brilliantly for a specific type of process: high-volume, stable, rules-based, same every time. For everything outside that — your CoE has a queue. A long one.
+A significant chunk of CoE capacity isn't building new automation — it's maintaining what's already running. Bots break when UIs update. Every quarter, something needs patching. The CoE that was supposed to clear your backlog is busy keeping last year's automations alive.
 
 ---
 
-## The Citizen Developer Was Always a Fantasy
+## The Citizen Developer Problem
 
-The vendors saw the scaling problem coming. Their answer was citizen development — business users building their own automation with low-code platforms. The promise: democratise automation, clear the backlog, let business users self-serve.
+The vendors saw the scaling problem coming. Their answer was citizen development — business users building their own automation with general-purpose low-code platforms.
 
-It didn't work. Not because the tools were bad. Because the model was built on a lie.
+The tools weren't the problem. The approach was.
 
-Real enterprise processes touch four to seven systems. They have exceptions, regulatory dependencies, legacy constraints that change without notice. A business user who learned a drag-and-drop tool last month isn't equipped for that. And when they try, you don't get cleared backlogs — you get hundreds of ungoverned automations running across the enterprise, unknown to IT, with no error handling, no documentation, no owner when the person who built it leaves.
+Those platforms weren't built to understand automation. They don't know which elements in a workflow are sequence-critical. They don't capture selectors intelligently. They don't observe how a process actually works and structure it accordingly. A business user is left figuring all of that out with a drag-and-drop interface and no guidance.
 
-The security team calls it shadow IT. They're right.
+GPA tools are built differently. The recorder observes how you work — which elements you interact with, in what order, which steps carry the real logic — and structures the automation from that understanding. It's closer to having a developer virtually embedded in your process, watching and learning, than a form builder you fill out yourself.
+
+That's the difference. Not governance alone. The tool itself understands workflow.
 
 ---
 
 ## The Last Mile Nobody Reaches
 
-Here is the honest picture.
+The CoE reaches structured, high-volume, IT-visible work — processes big enough to justify a formal project, stable enough to survive a bot, important enough to make the priority queue. That's not everything. Not even close.
 
-The CoE reaches the structured, high-volume, IT-visible work — the processes big enough to justify a formal project, stable enough to survive a bot, important enough to make the priority queue. That's not everything. Not even close.
+What's left is the last mile: team-level processes, person-specific workflows, tasks too small for a formal CoE project but too large to keep doing manually.
 
-What's left is the last mile: team-level processes, person-specific workflows, tasks that are too small for a formal CoE project but too large to keep doing manually. Think about what that looks like in actual numbers.
+A CoE developer — even a junior one at 6 to 8 LPA — cannot justify two to three weeks of work for a process that saves one person two hours a week. The economics don't work for a centralised team with 200 items in the queue.
 
-A CoE developer — even a junior one at 6 to 8 LPA — cannot justify two to three weeks of work for a process that saves one person two hours a week. The economics don't work for a centralised team with 200 items in the queue. The process is real. The manual work is real. The CoE just wasn't designed to reach it.
-
-Multiply that 2-hour task across a 500-person operations team. You're looking at tens of thousands of hours per year in manual work that the CoE will never prioritise. Not because they don't care. Because they were never designed for the last mile.
+Multiply that 2-hour task across a 500-person operations team. Tens of thousands of hours per year in manual work the CoE will never prioritise. Not because they don't care. Because they were never designed for the last mile.
 
 That finance analyst running Monday morning reports? In the backlog.
 That HR coordinator processing quarterly onboarding documents? In the backlog.
@@ -63,36 +61,24 @@ Still manual. Two years in.
 
 ## What GPA Actually Is
 
-Guerrilla Process Automation is business-driven automation built by practitioners, governed by IT, supported by the CoE — without the 18-month wait.
+Guerrilla Process Automation is business-driven automation built by practitioners, governed by IT, supported by the CoE — without the wait.
 
 The word guerrilla is intentional. Guerrilla strategy enters where conventional forces can't. Lightweight, adaptive, close to the ground. Not weaker — differently suited to different terrain.
-
-The CoE is the conventional force. It operates at scale, handles the high-volume structured work, and does it well. GPA is guerrilla — last-mile, team-level, practitioner-owned. Terrain the CoE was never designed for. The two aren't competing. They're covering different ground in the same organisation.
 
 Three things make it different from the approaches that failed:
 
 **Business-driven.** The person who does the work builds the automation. They know the process better than any developer who'll spend three hours in a requirements meeting trying to understand it.
 
-**IT-governed.** Not shadow IT. GPA runs on IT-approved infrastructure. Same procurement ticket, same approved browser, same managed laptop. The difference is who builds it, not where it runs.
+**IT-governed.** Not shadow IT. GPA runs on IT-approved infrastructure. Same procurement ticket, same approved browser, same managed laptop.
 
-**CoE-supported.** The CoE doesn't lose relevance — it upgrades. From building everything to governing everything. More coverage, same team.
-
----
-
-## The People In It
-
-**Guerrilla Practitioner** — the business user who owns their automation. Records, runs, and manages processes within CoE-approved guardrails. No coding required. Their Monday morning changes.
-
-**Guerrilla Bot Developer** — the technical backbone. Builds the reusable components, handles complex UI automation logic, and develops the workflow and Excel intelligence that makes practitioner-owned automation actually work at enterprise quality. This is product engineering — not bot scripting.
-
-**Guerrilla Architect** — the CoE bridge. Governs the GPA practice inside an organisation, certifies practitioners, owns the framework that connects last-mile automation to enterprise IT. The person who finally gives the CoE a scaling answer that isn't "hire more developers."
+**Tool-intelligent.** The automation platform understands workflow — not just records clicks. It captures what matters, structures it correctly, and handles the complexity that stops business users cold on every other tool.
 
 ---
 
 ## Where It Fits
 
-GPA isn't a replacement for RPA or the CoE. It's the extension that finally covers what they were never designed to reach.
+GPA isn't a replacement for RPA or the CoE. It's the extension that covers what they were never designed to reach.
 
-The processes sitting in your queue today — the ones that have been there for a year, two years, that your team has stopped asking about — those are the last mile. That's what GPA is for.
+The processes sitting in your queue — the ones your team has stopped asking about — that's the last mile. That's what GPA is for.
 
 > The automation gap isn't a technology problem. It's a distribution problem.
