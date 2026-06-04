@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 300 300" width="300" height="300">
-  <title>Guerrilla Bots — Icon Mark (Color)</title>
+  <title>Guerrilla Bots — Icon Mark (Transparent)</title>
   <defs>
-    <!-- Amber radial glow centered on gear -->
-    <radialGradient id="ag" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#E8A040" stop-opacity="0.40"/>
-      <stop offset="50%"  stop-color="#E8A040" stop-opacity="0.12"/>
+    <radialGradient id="agt" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#E8A040" stop-opacity="0.30"/>
+      <stop offset="60%"  stop-color="#E8A040" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#E8A040" stop-opacity="0"/>
     </radialGradient>
-    <!-- Clip to hole interior for color slashes -->
-    <clipPath id="hc">
+    <clipPath id="hct">
       <circle cx="150" cy="150" r="25"/>
     </clipPath>
   </defs>
 
-  <!-- Dark bg -->
-  <rect width="300" height="300" fill="#0D1F0D"/>
+  <!-- No background rect = transparent -->
 
-  <!-- Ambient amber glow behind the gear -->
-  <circle cx="150" cy="150" r="108" fill="url(#ag)"/>
+  <circle cx="150" cy="150" r="108" fill="url(#agt)"/>
 
-  <!-- Gear: military green body, sage outline, hole punched -->
   <path d="M 135.88 77.36 L 131.682 55.764 A 96 96 0 0 1 168.318 55.764 L 164.12 77.36 A 74 74 0 0 1 191.38 88.651 L 203.683 70.412 A 96 96 0 0 1 229.588 96.317 L 211.349 108.62 A 74 74 0 0 1 222.64 135.88 L 244.236 131.682 A 96 96 0 0 1 244.236 168.318 L 222.64 164.12 A 74 74 0 0 1 211.349 191.38 L 229.588 203.683 A 96 96 0 0 1 203.683 229.588 L 191.38 211.349 A 74 74 0 0 1 164.12 222.64 L 168.318 244.236 A 96 96 0 0 1 131.682 244.236 L 135.88 222.64 A 74 74 0 0 1 108.62 211.349 L 96.317 229.588 A 96 96 0 0 1 70.412 203.683 L 88.651 191.38 A 74 74 0 0 1 77.36 164.12 L 55.764 168.318 A 96 96 0 0 1 55.764 131.682 L 77.36 135.88 A 74 74 0 0 1 88.651 108.62 L 70.412 96.317 A 96 96 0 0 1 96.317 70.412 L 108.62 88.651 A 74 74 0 0 1 135.88 77.36 Z M 178 150 A 28 28 0 1 0 122 150 A 28 28 0 1 0 178 150 Z"
         fill="#1B2F1A"
         fill-rule="evenodd"
@@ -29,11 +24,9 @@
         stroke-width="2.5"
         stroke-linejoin="round"/>
 
-  <!-- Deep recessed center well -->
   <circle cx="150" cy="150" r="28" fill="#060e06"/>
 
-  <!-- // slashes clipped to hole: left=sage, right=amber -->
-  <g transform="rotate(-45 150 150)" clip-path="url(#hc)">
+  <g transform="rotate(-45 150 150)" clip-path="url(#hct)">
     <rect x="135" y="124" width="9" height="52" rx="2" fill="#8B9B6A"/>
     <rect x="155" y="124" width="9" height="52" rx="2" fill="#E8A040"/>
   </g>
