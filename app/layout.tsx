@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description:
     "Category-defining writing on GPA, automation's last mile, and the future of intelligent automation CoEs.",
   openGraph: { siteName: "Guerrilla Bots", type: "website" },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
