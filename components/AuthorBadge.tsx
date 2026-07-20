@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AuthorBadge() {
   return (
     <div className="mt-14 pt-8 border-t border-[#d0cbbf]">
@@ -8,12 +10,13 @@ export default function AuthorBadge() {
         Written by
       </p>
       <div className="flex items-start gap-4">
-        <div
-          className="w-10 h-10 rounded-full bg-[#1b2f1a] flex items-center justify-center text-[#f0ede5] text-xs font-bold flex-shrink-0 mt-0.5"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-        >
-          PN
-        </div>
+        <Image
+          src="/images/pranav.png"
+          alt="Pranav Neeli"
+          width={40}
+          height={40}
+          className="rounded-full object-cover flex-shrink-0 mt-0.5"
+        />
         <div>
           <p className="text-base font-bold text-[#1a2a12]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Pranav Neeli
