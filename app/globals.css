@@ -78,3 +78,155 @@ h1, h2, h3, h4 {
   border-radius: 0.75rem;
   margin: 2rem 0;
 }
+
+/* Headings below h2 */
+.prose h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-head);
+  letter-spacing: -0.005em;
+}
+
+.prose h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--military);
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5rem;
+  padding-left: 1.35rem;
+  color: #3a4a28;
+}
+
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.72em;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 1px;
+  background: var(--sage);
+  transform: rotate(45deg);
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose ol li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.25rem;
+}
+
+.prose ol li::marker {
+  color: var(--sage);
+  font-weight: 600;
+}
+
+/* Tables — scroll container keeps a wide grid off the page body */
+.table-wrap {
+  margin: 2.25rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--cream) 72%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 1px 2px rgba(26, 42, 18, 0.04),
+    0 8px 24px -12px rgba(26, 42, 18, 0.16);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.table-wrap thead th {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+  backdrop-filter: blur(8px);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  color: var(--military);
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table-wrap tbody td {
+  padding: 0.78rem 1rem;
+  vertical-align: top;
+  color: #3a4a28;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.table-wrap tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-wrap tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--bg-card) 34%, transparent);
+}
+
+/* First column reads as the row label */
+.table-wrap tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-head);
+}
+
+.table-wrap tbody td strong,
+.table-wrap thead th strong {
+  color: var(--military);
+}
+
+/* Callout / router cards: a paragraph that opens with a bold lead-in.
+   Excludes paragraphs that are nothing but bold (section labels). */
+.prose p:has(> strong:first-child):not(:has(> strong:only-child)) {
+  background: color-mix(in srgb, var(--cream) 66%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--sage);
+  border-radius: 0.7rem;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(26, 42, 18, 0.035);
+}
+
+@media (max-width: 640px) {
+  .table-wrap table {
+    font-size: 0.84rem;
+    min-width: 30rem;
+  }
+  .table-wrap thead th,
+  .table-wrap tbody td {
+    padding: 0.65rem 0.75rem;
+  }
+}

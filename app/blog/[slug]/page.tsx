@@ -1,6 +1,17 @@
 import { getPost, getAllPosts } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+
+// Tables need their own scroll container so a wide comparison grid never
+// forces the page body to scroll sideways on mobile.
+const mdxComponents = {
+  table: (props: React.ComponentProps<"table">) => (
+    <div className="table-wrap">
+      <table {...props} />
+    </div>
+  ),
+};
 import ViewCounter from "@/components/ViewCounter";
 import ReactionToast from "@/components/ReactionToast";
 import AuthorBadge from "@/components/AuthorBadge";
@@ -86,7 +97,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <div className="prose max-w-none">
             <MDXRemote
               source={post.content}
-              options={{ mdxOptions: { rehypePlugins: [rehypeSlug] } }}
+              components={mdxComponents}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [rehypeSlug],
+                },
+              }}
             />
           </div>
 
