@@ -1,0 +1,206 @@
+---
+title: "RPA vs No-Code vs GPA: Who Actually Builds the Automation"
+date: "2026-08-17"
+excerpt: "Three ways a business process gets automated, and the question that actually separates them is not how the automation gets built. It's who owns it at 9am on the Monday it breaks."
+pillar: "category-definition"
+faq:
+  - q: "What is the difference between RPA and no-code automation?"
+    a: "RPA is built by a developer inside a Center of Excellence, runs on enterprise infrastructure, and is owned by the CoE after go-live. No-code automation is built by the business user in a simplified vendor tool. The difference that matters is not the interface. It is that RPA has an owner after it ships and most no-code automation does not."
+  - q: "What is Guerrilla Process Automation?"
+    a: "Guerrilla Process Automation (GPA) is automation built by the business user who does the work, running on IT-approved infrastructure, with the automation carrying developer-grade understanding of the process rather than just a recording of clicks. It is the last-mile layer that sits below what a CoE can economically justify building."
+  - q: "Is GPA the same as citizen development?"
+    a: "No. Citizen development gave the business user a simplified version of a developer's tool and left them to solve a developer's problems. GPA puts the developer-grade intelligence inside the tool instead, and keeps IT visibility on by default rather than as an afterthought."
+  - q: "Why did citizen development stall at most enterprises?"
+    a: "Two reasons, and neither is that the tools were too hard. First, nothing owned the automation after it was built: no inventory, no versioning, no exception path, nobody to call when it broke. Second, the tools recorded what the user clicked without understanding what the step was for, so the first interface change left the automation with no way to recover."
+  - q: "Does GPA replace an RPA Center of Excellence?"
+    a: "No. RPA and GPA serve different economics. A CoE developer cannot justify three weeks building automation for a process that takes one person two hours a week, and that is correct prioritisation, not failure. GPA reaches the processes below that line. The CoE keeps the high-volume core."
+  - q: "Who should build automation, IT or the business user?"
+    a: "Both, on different processes. The person who has run a process for six years understands its exceptions better than a developer who read the SOP for two hours. The developer understands what happens when a portal session expires mid-run. GPA is the arrangement where the first person builds and the second person's expertise is already inside the tool."
+  - q: "Is business-user-built automation a security risk?"
+    a: "Ungoverned automation is. That is a governance question, not a question about who built it. GPA runs on infrastructure IT already approved, keeps credentials out of the workflow file, and stays visible to IT by design. The risk case is automation nobody can see, regardless of author."
+  - q: "What kind of processes suit GPA rather than RPA?"
+    a: "Processes that are real work but too small to survive a CoE business case. A weekly reconciliation across three portals. A monthly MIS pull. A recurring download-rename-upload loop. High enough frequency to matter to the person doing it, too low in volume to justify a funded automation project."
+  - q: "What happens when a GPA automation breaks?"
+    a: "It should degrade to a human, not to a failed run and a silent gap. The automation stops, tells someone, and hands back enough context that the person who owns the process can finish the run and resume. Automation that fails silently is worse than no automation, because the manual check goes away with it."
+  - q: "Can a GPA automation be handed over to the CoE later?"
+    a: "Yes, and that is the point of building it on governed infrastructure. A process that grows in volume or criticality graduates into the CoE's pipeline with a working automation and a documented set of real exceptions already attached, which is a far better starting brief than a written requirements document."
+---
+
+There are three ways a business process gets automated inside a large company: a developer builds it in an RPA Center of Excellence, the business user builds it in a no-code tool, or the business user builds it in a tool that already carries developer-grade understanding of the work. The third one is Guerrilla Process Automation. The difference between them is not the interface, the licence cost, or how quickly a demo runs. It is who owns the automation at 9am on the Monday it breaks.
+
+**TL;DR**
+
+- RPA works, and it works on the processes a CoE can justify funding. That is a smaller set than the automation opportunity, and it always was.
+- No-code and citizen development gave business users a simplified developer tool and left them holding a developer's problems. Most programmes stalled.
+- Citizen development did not stall because the tools were too complicated. It stalled because nothing owned the automation after it was built, and because the tools recorded clicks without understanding what the clicks were for.
+- GPA is the third arrangement: the business user builds, the developer-grade intelligence lives inside the tool, and IT keeps visibility by default.
+- Most companies will run all three. This is a division of labour, not a replacement decision.
+
+Jump to: [The three ways](#the-three-ways-a-process-gets-automated) · [Why citizen development stalled](#why-citizen-development-stalled-and-why-it-was-not-the-tools) · [The comparison](#how-the-three-compare) · [FAQ](#frequently-asked-questions)
+
+---
+
+## The three ways a process gets automated
+
+### RPA: the developer builds it
+
+Robotic Process Automation is software that runs a business process by driving the same interfaces a person would, built by a developer, deployed on enterprise infrastructure, and owned by a Center of Excellence after it ships.
+
+It works. That deserves saying plainly, because the last two years of automation commentary have been unkind to RPA in ways that mostly reveal that the commentator has never run a bot in production. Payroll transfers, claims processing at volume, invoice extraction from standard templates: these got automated, they stayed automated, and the returns were real.
+
+RPA's constraint is not technical. It is economic. A CoE developer in India costs between 25 and 40 lakh a year at the experience level that can be trusted with a production process. That developer cannot justify three weeks of work on something one person does for two hours a week. Not because the CoE is badly run, but because it is well run. Prioritising the ₹40 lakh process over the ₹4 lakh one is the correct call every single time it comes up.
+
+Which means the small process is never wrong to reject, and also never gets built. It just sits there, being done by hand, for years. That is the [last mile](/blog/what-is-gpa), and rejecting it repeatedly is a structural outcome, not a failure of anyone's judgment.
+
+### No-code and citizen development: the business user builds it
+
+Around 2019, every major automation vendor arrived at the same conclusion, and it was the right conclusion: the CoE cannot build everything, so let the business user build some of it themselves. UiPath shipped StudioX. Microsoft pushed Power Automate into every Office licence. Automation Anywhere ran a citizen developer track. The industry called the resulting person a citizen developer and built training programmes around the title.
+
+The reasoning was sound. The person who has run a reconciliation for six years knows its exceptions better than a developer who read the SOP for two hours. Moving the build closer to the knowledge is obviously correct.
+
+What actually shipped was a simplified version of a developer's tool, handed to someone who was then left to solve a developer's problems. Where do the credentials live. What happens when the portal adds a field. Who finds out when the run fails at 6am. What do you do with the version that worked before you changed it.
+
+Notice that none of those are questions about the interface being too hard.
+
+### GPA: the business user builds it, and the tool knows what the work is
+
+Guerrilla Process Automation is automation built by the person who does the work, running on infrastructure IT has already approved, where the hard parts developers spent years learning are built into the tool rather than left to the user.
+
+The recorder watches how the work is actually done: which elements you touch, in what order, which steps carry the real logic and which are navigation. It structures automation from that understanding rather than from a transcript of your mouse movements. Developer-grade intelligence, practitioner-facing.
+
+And the automation stays visible. Not submitted for approval every time, but present in an inventory IT can see, running on infrastructure IT signed off on, with credentials handled outside the workflow file. IT is the approver of the environment. It does not need to be the builder of every process inside it.
+
+---
+
+## Why citizen development stalled, and why it was not the tools
+
+This is the part most vendor content gets wrong, and getting it wrong matters, because the wrong diagnosis produces the wrong product.
+
+The common explanation is that the tools were still too complex for business users. That explanation is convenient and mostly false. It is also a claim GPA cannot make, because GPA would fail the same test. Building reliable automation against a portal that changes without notice is genuinely hard. No interface makes that easy. Anyone promising that it is easy is selling a demo, not a product.
+
+Two things actually broke it.
+
+**Nothing owned the automation after it was built.** A business user builds something that works. Six weeks later it fails at 6am. There is no inventory listing it, no version history to roll back to, no exception queue, no owner, and no one to call. The person who built it has moved to a different team. IT does not know it exists, so IT cannot support it, and finding out about it for the first time during an incident is exactly the experience that makes IT hostile to the whole idea. That is a governance gap, and governance is an arrangement, not a feature.
+
+**The tools recorded clicks without understanding the work.** A recorder that captures "click at coordinate, type this string, click again" has no model of what the step was for. So when the portal moves a button or renames a field, the automation has no basis for recovery. It cannot reason that the step was "find the invoice number and put it in the search box" because it never knew that. It only knew where the box used to be.
+
+That second failure is why brittleness became the defining complaint about business-built automation, and it is a solvable problem. It is solvable by putting the understanding into the tool. It is not solvable by simplifying the interface further, which is what most of the industry tried.
+
+---
+
+## How the three compare
+
+| | **RPA** | **No-code / citizen dev** | **GPA** |
+|---|---|---|---|
+| Who builds it | CoE developer | Business user | Business user (Guerrilla Practitioner) |
+| Who owns it after go-live | CoE | Usually nobody | The builder, with IT visibility |
+| Where it runs | Enterprise infrastructure | Wherever the user's tool runs | IT-approved user infrastructure |
+| How it understands a step | Developer encodes the intent | Records the click | Infers intent from how the work is done |
+| When the portal changes | Developer fixes it, via ticket | Breaks, often silently | Adapts where it can, escalates where it cannot |
+| Exception handling | Designed in, by a developer | Rarely present | Degrades to a human, resumes after |
+| Credential handling | Enterprise-managed | Frequently improvised | Referenced, never stored in the workflow |
+| IT visibility | Full | Typically none | On by default |
+| Versioning and rollback | Enterprise-grade | Rare | Snapshot on every save |
+| Time to first working run | Weeks to months, after the queue | Hours | Hours |
+| Economic floor | High. Needs a business case | None, and that is part of the problem | Low. Designed for below the CoE's line |
+| Best fit | High volume, high criticality, stable | Genuinely trivial, single-system tasks | Recurring cross-portal work too small to fund |
+
+The row that decides everything is the second one. Who owns it after go-live. RPA has a clear answer. Citizen development mostly does not, and every other failure in that column follows from it.
+
+---
+
+## Where each one actually fits
+
+**RPA fits the funded core.** High volume, high criticality, an audit trail somebody will one day ask for, and enough scale that a developer's time returns on the investment. Nothing in GPA changes this and nothing should. A company that moves its claims processing off RPA because a business user can now record a browser has made a mistake.
+
+**No-code fits genuinely trivial work.** A single system, a single trigger, no exceptions worth naming. Move a file when an email arrives. Post a notification when a record changes. These tools are good at this and there is no reason to build anything else for it.
+
+**GPA fits the middle, which is the largest and least served band.** A weekly reconciliation across three portals and a spreadsheet. A monthly MIS pull that touches four systems. A recurring download, rename, check, upload loop that takes two hours and has taken two hours every week for three years. High enough frequency that the person doing it feels it. Too low in volume to ever clear a CoE business case.
+
+That band is not small. It is also the band both major RPA vendors have quietly stopped writing content for, because the person who does that work cannot sign a six-figure contract.
+
+![A raised concrete threshold running the width of the frame. A handful of very large crates have been rolled cleanly over it and sit on the platform above. Below the lip, hundreds of much smaller crates are jammed against the vertical face, none of them able to clear the height, piled back into the distance.](/images/posts/rpa-vs-no-code-vs-gpa/img-1.png)
+
+---
+
+## This is not a pick-one decision
+
+The automation journey is not a ladder where you start with no-code, graduate to RPA, and arrive somewhere final. Most companies of any size will run all three at once, on different processes, and that is the correct end state rather than a transitional mess.
+
+Keep RPA on the structured, high-volume core. Let the trivial single-system stuff stay in whatever no-code tool is already bundled with your licences. Put GPA on the recurring cross-system work that was never going to get funded.
+
+The relationship between the CoE and GPA is the part worth getting right. GPA is not a workaround for a slow CoE and framing it that way will get it banned, correctly. It is the layer that reaches processes the CoE was never resourced to reach. A CoE that adopts it gains a pipeline of automations built by the people closest to the work, with real exceptions already documented, arriving as working artifacts instead of requirement documents. When one of those processes grows in volume or criticality, it graduates into the CoE's pipeline with a far better starting brief than any intake form produces.
+
+---
+
+## How to tell which one your process needs
+
+Five questions, in order. The first one you answer honestly usually settles it.
+
+**1. If this process stopped for a week, who escalates?** If the answer is a regulator, a customer, or a finance close, it belongs in the CoE. Criticality decides ownership before anything else does.
+
+**2. How many systems does it touch?** One system with a decent API is no-code work. Three portals, a download folder, and an Excel file is GPA territory, and it is precisely the shape no-code connectors handle worst.
+
+**3. Has it already been rejected by the CoE, or would it be?** Not a complaint, a diagnostic. If you can predict the rejection, you have identified a last-mile process and you should stop waiting for a different answer.
+
+**4. What percentage of runs hit something unexpected?** Under five percent, straight-through automation is realistic. Above twenty, you need a human-in-the-loop design from the start, and any tool that does not offer one will fail here regardless of who builds it.
+
+**5. Who fixes it when the portal changes?** Answer this before you build anything. If the honest answer is "nobody, and we would find out three weeks later," you do not have a tooling problem yet. You have a governance problem, and building faster will make it worse.
+
+---
+
+## Frequently asked questions
+
+### What is the difference between RPA and no-code automation?
+
+RPA is built by a developer inside a Center of Excellence, runs on enterprise infrastructure, and is owned by the CoE after go-live. No-code automation is built by the business user in a simplified vendor tool. The difference that matters is not the interface. It is that RPA has an owner after it ships and most no-code automation does not.
+
+### What is Guerrilla Process Automation?
+
+Guerrilla Process Automation (GPA) is automation built by the business user who does the work, running on IT-approved infrastructure, with the automation carrying developer-grade understanding of the process rather than just a recording of clicks. It is the last-mile layer that sits below what a CoE can economically justify building.
+
+### Is GPA the same as citizen development?
+
+No. Citizen development gave the business user a simplified version of a developer's tool and left them to solve a developer's problems. GPA puts the developer-grade intelligence inside the tool instead, and keeps IT visibility on by default rather than as an afterthought.
+
+### Why did citizen development stall at most enterprises?
+
+Two reasons, and neither is that the tools were too hard. First, nothing owned the automation after it was built: no inventory, no versioning, no exception path, nobody to call when it broke. Second, the tools recorded what the user clicked without understanding what the step was for, so the first interface change left the automation with no way to recover.
+
+### Does GPA replace an RPA Center of Excellence?
+
+No. RPA and GPA serve different economics. A CoE developer cannot justify three weeks building automation for a process that takes one person two hours a week, and that is correct prioritisation, not failure. GPA reaches the processes below that line. The CoE keeps the high-volume core.
+
+### Who should build automation, IT or the business user?
+
+Both, on different processes. The person who has run a process for six years understands its exceptions better than a developer who read the SOP for two hours. The developer understands what happens when a portal session expires mid-run. GPA is the arrangement where the first person builds and the second person's expertise is already inside the tool.
+
+### Is business-user-built automation a security risk?
+
+Ungoverned automation is. That is a governance question, not a question about who built it. GPA runs on infrastructure IT already approved, keeps credentials out of the workflow file, and stays visible to IT by design. The risk case is automation nobody can see, regardless of author.
+
+### What kind of processes suit GPA rather than RPA?
+
+Processes that are real work but too small to survive a CoE business case. A weekly reconciliation across three portals. A monthly MIS pull. A recurring download-rename-upload loop. High enough frequency to matter to the person doing it, too low in volume to justify a funded automation project.
+
+### What happens when a GPA automation breaks?
+
+It should degrade to a human, not to a failed run and a silent gap. The automation stops, tells someone, and hands back enough context that the person who owns the process can finish the run and resume. Automation that fails silently is worse than no automation, because the manual check goes away with it.
+
+### Can a GPA automation be handed over to the CoE later?
+
+Yes, and that is the point of building it on governed infrastructure. A process that grows in volume or criticality graduates into the CoE's pipeline with a working automation and a documented set of real exceptions already attached, which is a far better starting brief than a written requirements document.
+
+---
+
+## Where to go from here
+
+**You run a CoE and the backlog is the problem.** The rejection is not the failure. Read [what GPA is and where it sits](/blog/what-is-gpa) for the category, and note that the graduation model above is the part worth arguing with.
+
+**You are doing the process by hand right now.** Read [what happened when one person in finance ops stopped waiting](/blog/arjun-23-bots). It is the closest thing to a description of the middle band from the inside.
+
+**You are an RPA developer wondering what this means for you.** Read [The Cursor Moment for Automation](/blog/cursor-moment-for-automation). The short version is that the skill does not go away, it moves inside the tool, and that is a better outcome for you than it sounds.
+
+**You want the wider argument about where this category sits.** Read [Robotic. Agentic. Guerrilla.](/blog/three-kinds-of-automation) for why the current RPA-versus-AI-agents debate is talking about half the work.
+
+**You want to know what is actually being built.** [guerrillabots.com](https://guerrillabots.com).

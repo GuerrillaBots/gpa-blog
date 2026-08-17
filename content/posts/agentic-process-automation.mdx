@@ -1,0 +1,235 @@
+---
+title: "Agentic Process Automation: The Rebrand, and What It Left Behind"
+date: "2026-08-17"
+excerpt: "Every automation vendor repositioned to agentic in the last twenty-four months. The dates show it was mostly a category exercise, and the real cost was not the marketing spend. It was the audience the whole industry walked away from while it was busy renaming itself."
+pillar: "category-definition"
+faq:
+  - q: "What is agentic process automation?"
+    a: "Agentic process automation is automation in which an AI agent decides the steps of a business process at run time, reasoning toward a goal and calling tools as it goes, rather than replaying a fixed script the way traditional RPA does. The capability is real. The term is a vendor coinage, not an analyst-defined category."
+  - q: "Who coined the term agentic process automation?"
+    a: "Automation Anywhere, in a press release dated 17 December 2024 that described the company as first to market and first to deploy at scale. The underlying product timeline points back to an AI Agent release in June 2024, six months before the term appeared publicly."
+  - q: "Is agentic process automation a recognised analyst category?"
+    a: "No. Eighteen months on, Gartner uses agentic automation and Forrester uses agentic AI. No Magic Quadrant, Wave or PEAK Matrix carries the APA name, and Automation Anywhere's own Gartner Leader badge is still for Robotic Process Automation, eighth year running."
+  - q: "What is the difference between agentic process automation and agentic automation?"
+    a: "At the capability level, roughly nothing. APA is one vendor's proprietary term and agentic automation is the market's generic. The evidence is that the vendor who coined APA now leads its own homepage with the generic, having moved the coined term down to a product name."
+  - q: "Is agentic automation the same as RPA?"
+    a: "No. RPA follows a fixed script and produces the same output for the same input every time. An agentic system plans its own path and can take a different one on the next run. That flexibility helps on ambiguous work and hurts on financial and compliance work, where reproducibility is the requirement."
+  - q: "Does agentic AI replace RPA?"
+    a: "Not for structured, high-volume, audit-bearing work, where determinism is the point. The realistic outcome is a mix: deterministic execution for the structured core, agents for genuinely variable inputs, humans at the exceptions. Vendors selling replacement are describing a roadmap, not an installed base."
+  - q: "Why did every automation vendor reposition to agentic?"
+    a: "Because that is where the budget moved. AI line items get approved at CIO and board level in a way that incremental RPA expansion no longer does. The repositioning was rational. The side effect was that content, roadmaps and attention all moved up-market at once."
+  - q: "Where does agentic AI genuinely work well?"
+    a: "Where input varies and no rule can be written in advance: reading unstructured documents, triaging inbound queues, summarising a case for a human decision, and recovering from a UI change that would stop a hard-coded selector cold. Those gains are real."
+  - q: "What is missing from the three generations of workflow automation framework?"
+    a: "A generation for the process nobody funded. The model published on 6 August 2026 runs RPA, then iPaaS, then AI-native agents, and all three assume a workflow someone with a budget already chose to automate. The recurring work that never cleared a business case has no generation of its own."
+  - q: "My process is too small for an automation project. What are my options?"
+    a: "Treat the rejection as structural, not a judgment on your work. A Center of Excellence cannot justify three weeks of developer time on a two-hour weekly task, and it should not. The open route is a tool the person who runs the process can use directly, on infrastructure IT has already approved."
+  - q: "Is Guerrilla Process Automation just another category rebrand?"
+    a: "It is a name for one audience and one problem: recurring work below a CoE's funding line, automated by the person who does it, on IT-approved infrastructure. If the market prefers a different word, the audience and the problem do not change. That is the test any coined term should face, this one included."
+---
+
+Agentic process automation is automation in which an AI agent decides the steps of a business process at run time, reasoning toward a goal and calling tools as it goes, rather than replaying a fixed script the way traditional RPA does. The term was coined by Automation Anywhere in a press release dated 17 December 2024, which claimed the company was "first to market, first to deploy at scale." Eighteen months later, no analyst firm has created the category, and Automation Anywhere's own homepage no longer leads with the term it invented.
+
+The rebrand cost the industry something real, and it was not the marketing budget.
+
+**TL;DR**
+
+- APA is a vendor coinage from December 2024, not an analyst category. Gartner says "agentic automation". Forrester says "agentic AI". No Magic Quadrant, Wave or PEAK Matrix carries the APA name.
+- The tell is on the coiner's own homepage. Automation Anywhere's H1 today reads "The #1 provider of agentic automation", and the theme of Imagine 2026 is "Autonomous Enterprise". They quietly demoted their own category to a product name.
+- The technology underneath is genuinely useful for a specific class of work. The category theater is separate, and only one of the two deserves criticism.
+- The real cost: both major RPA vendors stopped publishing for practitioners. UiPath's `/blog/rpa` has 201 posts and the newest is July 2025. Automation Anywhere's `learn-rpa` category has been dormant since February 2023.
+- The newest framework in the space, published 6 August 2026, splits automation into RPA, iPaaS and AI-native agents. All three assume a process somebody already funded. There is no generation for the process nobody funded, and that is most of the work.
+
+Jump to: [The timeline](#eighteen-months-of-a-category-land-grab-with-dates) · [What it bought](#what-the-money-actually-bought) · [Who got left behind](#the-cost-nobody-put-in-the-press-release) · [The missing generation](#three-generations-and-the-one-that-is-missing) · [FAQ](#frequently-asked-questions)
+
+---
+
+## What agentic process automation actually is
+
+Strip the naming fight away and there is a real engineering difference underneath, worth stating before the criticism starts.
+
+A traditional RPA bot executes a path a developer encoded. Step 4 always follows step 3. Same input, same output, every run, until something on screen moves. That determinism is why finance teams trust it and why it snaps when a portal ships a redesign.
+
+An agentic system is given a goal and a set of tools, and it decides the path itself. It can read a document it has never seen, choose which tool to call next, notice that a button moved and find it anyway. On variable input that is a real gain over a fixed script, and anyone who has spent a weekend repairing selectors after an SAP patch understands why the industry got excited.
+
+The same property cuts both ways. A system that plans its own path can plan a different one tomorrow. For reading an unstructured invoice, that flexibility is the feature. For preparing the numbers a CFO signs, reproducibility is the entire requirement. Gartner's projection that 40% of agentic AI projects will be cancelled by the end of 2027 is not a statement that the technology is fake. It is what happens when a capability suited to ambiguous work gets sold into structured work.
+
+None of that is a naming problem. The naming problem is separate, and the dates tell it better than any argument.
+
+---
+
+## Eighteen months of a category land grab, with dates
+
+What follows is reconstructed from page publication dates, sitemap timestamps and press releases on the vendor's own site. It is a sequence, not an inference about intent.
+
+| Date | The move | What it was for |
+|---|---|---|
+| Jun 2024 | AI Agent product ships | The launch the category claim is later backdated to |
+| Jul 2024 | `/rpa/ai-agents` published | Component page. The phrase people were already typing |
+| Oct 2024 | `/rpa/agentic-workflows` published | Second component page, still no category |
+| **17 Dec 2024** | Press release: "first to market, first to deploy at scale" | The claim is staked, CEO quote and named customer attached |
+| **3 Jan 2025** | `/rpa/agentic-process-automation` and `/rpa/agentic-ai` ship the same day | The category page and its generic hedge, launched together |
+| Mar 2025 | `/rpa/ai-process-management` | Land grab on BPM's territory |
+| **17 Mar 2025** | `/rpa/rpa-vs-ipa-vs-apa` | The scaffolding page: the new term in identical grammar to two terms buyers accept |
+| Apr 2025 | `/rpa/autonomous-enterprise`, five-stage maturity table | An outcome term positioned above the category itself |
+| Jun 2025 | Eight `/solutions/agentic-solutions/*` pages | The category becomes buyable. SKUs, not concepts |
+| Oct 2025 | `/rpa/agentic-ai-platforms`, ~12,000 words, eight competitors named | The coiner writes the buyer's guide to its own category |
+| Nov 2025 | Acquires Aisera and 100-plus AI engineers | Makes the claim structurally true after the fact |
+| 2025 and 2026 | Retrofit pass: ~20 legacy pillars rewritten with H2s routing into APA | The old library is repointed at the new term |
+| **Aug 2026** | Homepage H1: "The #1 provider of agentic automation". Imagine 2026 theme: "Autonomous Enterprise" | The coined term is no longer the top-of-funnel claim |
+
+Read the first row against the last. The category was claimed in December 2024. By August 2026 the company that claimed it leads with the market's generic instead. APA still exists on their site, as a product name, not a category claim.
+
+That is not a failure of execution. The execution was excellent, and anyone trying to move a term through a market should study the 17 March 2025 scaffolding page in particular. It defined a new term by putting it in parallel grammar with two terms buyers already accepted, then explicitly refused the pick-one framing that would have threatened the installed base. It worked, and it still did not produce a category.
+
+---
+
+## What the money actually bought
+
+Eighteen months, a nine-figure marketing programme, an acquisition. The honest ledger:
+
+**What worked.** The term propagated. TechTarget published a neutral APA definition. Salesforce, Box, SS&C Blue Prism and others shipped their own APA explainers. Gartner Peer Insights now lists a product literally named "Agentic Process Automation System". Competitors free-rode on a term one company paid to create, which is what a successful coinage looks like.
+
+**What did not.** No analyst created the category. Gartner's language is "agentic automation". Forrester's is "agentic AI". There is no Wikipedia entry for APA as a category. And the detail that says the most: Automation Anywhere's Gartner Magic Quadrant Leader badge, the one on the homepage, is still for Robotic Process Automation, eighth year running. The company that spent eighteen months arguing RPA was superseded still displays its RPA leadership as proof of credibility, because that is the badge that exists.
+
+The most durable assets out of the whole exercise were the unglamorous ones. Forty-nine definitional pillar pages. A free tier. A free certification. Not the term.
+
+Which brings us to the audience, and to the part of the bill nobody itemised.
+
+---
+
+## The cost nobody put in the press release
+
+Repositioning up-market is not free. When your category claim is an enterprise-transformation claim, your content has to sound like one, and the reader has to be someone who can approve one. Content follows the buyer.
+
+So look at the pages written for everybody else.
+
+**UiPath.** The `/blog/rpa` category contains 201 posts. The most recent was published in July 2025. `/blog/automation` has been dormant since August 2025. UiPath has 759 blog posts total and publishes roughly twice a week, so this is not a company that stopped writing. It is a company that stopped writing about RPA, in the RPA section, for RPA practitioners.
+
+**Automation Anywhere.** `/rpa/no-code-automation` has not been touched since September 2024. The `learn-rpa` blog category has been dormant since February 2023, which is three and a half years. The `/products/citizen-developers` page is still filed under the legacy RPA section rather than the new agentic section, an information-architecture decision that says exactly what that audience is now worth.
+
+![Two vendor blog archives side by side, each showing a large post count and a last-published date more than a year old](/images/posts/agentic-process-automation/img-1.png)
+
+Then there is the free tier, where abandonment becomes policy rather than a content pattern. Automation Anywhere's Community Edition requires all three conditions at once: fewer than 250 machines, fewer than 250 users, and under $5 million in annual revenue. Qualify, and you get a free product with no sales motion attached. A five-person bookkeeping firm is not a small customer in that model. It is not a customer.
+
+Add it up. Nobody at either company is now writing for the person who has to make a bot work on a portal that changed its DOM last Tuesday. That person cannot sign a six-figure contract, so the content followed the money upward and took the roadmap with it.
+
+This is worth being fair about. Those were rational decisions by competent people under real revenue pressure. AI budgets get approved in a way incremental RPA expansion does not, and every vendor could defend the call in a board meeting.
+
+They just all made it at the same time, and the top of this market now has no one speaking to the operator. The [last mile](/blog/what-is-gpa) did not get solved by agents. It got vacated by everybody at once, while the industry argued about what to call itself.
+
+---
+
+## Three generations, and the one that is missing
+
+The clearest illustration of the blind spot did not come from the incumbents. It came from an AI startup.
+
+On 6 August 2026, Lyzr published a framework called "the three generations of enterprise workflow automation": Gen 1 is RPA and rule-based bots, Gen 2 is iPaaS and low-code connector tools, Gen 3 is AI-native agentic automation. It is a good page, better structured than anything on either incumbent site.
+
+It also announces its thesis in the open:
+
+> "No major vendor page currently frames enterprise workflow automation this way, but the three-generation split is the clearest way to understand where your options actually sit."
+
+They are right that no vendor frames it that way. They are wrong that the split is complete, and the hole is the one the rebrand opened.
+
+Gen 1 is a process a CoE decided to fund. Gen 2 is a process an ops team bought a connector tool to handle. Gen 3 is a process someone is standing up an agent for. **All three assume a workflow that somebody with a budget already decided was worth automating.**
+
+There is no generation in that model for the process nobody funded.
+
+![A cross-section of open ground. Three shallow layers near the surface have been neatly excavated, squared off and roped. Beneath them sits a fourth layer many times thicker than all three combined, untouched, running past both edges of the frame with no visible end.](/images/posts/agentic-process-automation/img-2.png)
+
+That fourth band is not a rounding error. It is the weekly reconciliation across three portals and one spreadsheet. The monthly MIS pull that touches four systems. The download, rename, check, upload loop that has taken two hours every Tuesday for three years. Individually too small to survive a business case. Collectively, most of the work.
+
+A CoE rejecting those is not a CoE failing. It is a CoE prioritising correctly, every single time, which is exactly why the queue never clears. We published our version of the three-tier argument as [Robotic. Agentic. Guerrilla.](/blog/three-kinds-of-automation) on 21 July 2026, and the full comparison of who builds, who owns and what happens when it breaks is in [RPA vs no-code vs GPA](/blog/rpa-vs-no-code-vs-gpa).
+
+---
+
+## Where agents genuinely win
+
+The attack above is on the category theater and the audience abandonment. It is not on the technology, and it would be dishonest to leave the impression that agentic AI is only marketing.
+
+Agents are the right tool when input varies and no rule can be written in advance. Reading a document that arrives in a different layout from every vendor. Triaging an inbound queue where the request could be any of forty things. Summarising a messy case so a human can decide it in thirty seconds instead of ten. Recovering from an interface change that would have stopped a hard-coded selector cold.
+
+That last one is not a nice-to-have. Brittleness has been the defining complaint about UI automation for a decade, and reasoning about what a step was *for* rather than where the button *was* is a genuine answer to it. The industry deserves credit for that.
+
+The failure mode is applying it where determinism was the requirement. A finance manager is not sending month-end numbers to a CFO from a system that may take a different path this run. And the uncomfortable truth in the middle is that most back-office work is not ambiguous at all. It is structured, repetitive, and already thoroughly understood by the person doing it. What it needs is not judgment. It needs hands.
+
+Adoption reflects that. McKinsey's State of AI 2025 found 62% of respondents at least experimenting with AI agents while only 23% had scaled one, and Deloitte's State of AI in the Enterprise 2026 found roughly one in five companies has a mature governance model for autonomous agents. That is an industry in pilot, not one that has replaced anything.
+
+---
+
+## If you are the person doing the work
+
+Here is the practical read, stripped of the category argument.
+
+Your process was not rejected because it did not matter. It was rejected because a developer who costs 30 to 40 lakh a year cannot justify three weeks on a task that saves one person two hours a week, and that arithmetic does not change when the job title becomes agent engineer. If anything the floor rose, because agentic projects arrive carrying governance, evaluation and observability requirements a small process cannot support.
+
+So the rebrand did not move your process closer to the front of the queue. It moved the queue further away.
+
+The route that is open is the one the industry stopped writing about: the person who runs the process builds the automation, using a tool that carries developer-grade understanding of the work rather than a transcript of mouse clicks, on infrastructure IT has already approved and can see. IT stays the approver of the environment. It does not need to build every process inside it. The CoE gains a pipeline of automations from the people closest to the work, arriving as working artifacts with real exceptions documented instead of as intake forms.
+
+That is [Guerrilla Process Automation](/blog/what-is-gpa), and the reason to name it is not that the market needs another three-letter category. It is that the audience needs somebody still writing for them.
+
+Hold the name to the standard this post applied to everyone else's. A coined term is worth something only if the problem and the audience under it survive the word being replaced. Ours are the last mile and the operator stuck below the funding line. Those persist whatever anyone ends up calling them.
+
+---
+
+## Frequently asked questions
+
+### What is agentic process automation?
+
+Agentic process automation is automation in which an AI agent decides the steps of a business process at run time, reasoning toward a goal and calling tools as it goes, rather than replaying a fixed script the way traditional RPA does. The capability is real. The term is a vendor coinage, not an analyst-defined category.
+
+### Who coined the term agentic process automation?
+
+Automation Anywhere, in a press release dated 17 December 2024 that described the company as first to market and first to deploy at scale. The underlying product timeline points back to an AI Agent release in June 2024, six months before the term appeared publicly.
+
+### Is agentic process automation a recognised analyst category?
+
+No. Eighteen months on, Gartner uses agentic automation and Forrester uses agentic AI. No Magic Quadrant, Wave or PEAK Matrix carries the APA name, and Automation Anywhere's own Gartner Leader badge is still for Robotic Process Automation, eighth year running.
+
+### What is the difference between agentic process automation and agentic automation?
+
+At the capability level, roughly nothing. APA is one vendor's proprietary term and agentic automation is the market's generic. The evidence is that the vendor who coined APA now leads its own homepage with the generic, having moved the coined term down to a product name.
+
+### Is agentic automation the same as RPA?
+
+No. RPA follows a fixed script and produces the same output for the same input every time. An agentic system plans its own path and can take a different one on the next run. That flexibility helps on ambiguous work and hurts on financial and compliance work, where reproducibility is the requirement.
+
+### Does agentic AI replace RPA?
+
+Not for structured, high-volume, audit-bearing work, where determinism is the point. The realistic outcome is a mix: deterministic execution for the structured core, agents for genuinely variable inputs, humans at the exceptions. Vendors selling replacement are describing a roadmap, not an installed base.
+
+### Why did every automation vendor reposition to agentic?
+
+Because that is where the budget moved. AI line items get approved at CIO and board level in a way that incremental RPA expansion no longer does. The repositioning was rational. The side effect was that content, roadmaps and attention all moved up-market at once.
+
+### Where does agentic AI genuinely work well?
+
+Where input varies and no rule can be written in advance: reading unstructured documents, triaging inbound queues, summarising a case for a human decision, and recovering from a UI change that would stop a hard-coded selector cold. Those gains are real.
+
+### What is missing from the three generations of workflow automation framework?
+
+A generation for the process nobody funded. The model published on 6 August 2026 runs RPA, then iPaaS, then AI-native agents, and all three assume a workflow someone with a budget already chose to automate. The recurring work that never cleared a business case has no generation of its own.
+
+### My process is too small for an automation project. What are my options?
+
+Treat the rejection as structural, not a judgment on your work. A Center of Excellence cannot justify three weeks of developer time on a two-hour weekly task, and it should not. The open route is a tool the person who runs the process can use directly, on infrastructure IT has already approved.
+
+### Is Guerrilla Process Automation just another category rebrand?
+
+It is a name for one audience and one problem: recurring work below a CoE's funding line, automated by the person who does it, on IT-approved infrastructure. If the market prefers a different word, the audience and the problem do not change. That is the test any coined term should face, this one included.
+
+---
+
+## Where to go from here
+
+**You are evaluating agentic automation for a real project.** Score the process before the vendor does. If input genuinely varies run to run, agents are the right call and the pitch is honest. If it is structured work needing reproducible output, read [Robotic. Agentic. Guerrilla.](/blog/three-kinds-of-automation) and check which of the three you are buying for.
+
+**You run a CoE and the backlog is what keeps you up.** The rejections are correct and the queue still never clears, which makes it structural. [RPA vs no-code vs GPA](/blog/rpa-vs-no-code-vs-gpa) lays out the division of labour, including how a last-mile automation graduates into your pipeline as a working artifact.
+
+**You are an RPA developer watching your job title get rebranded.** The skill does not disappear, it moves inside the tool, and that is a better outcome than it sounds. [The Cursor Moment for Automation](/blog/cursor-moment-for-automation) is this argument written for you.
+
+**You are doing the process by hand while the debate happens above you.** Read [what happened when one person in finance ops stopped waiting](/blog/arjun-23-bots). It is the fourth band described from inside it.
+
+**You want the category argument, not the teardown.** [What GPA is and where it sits](/blog/what-is-gpa) defines the term, the audience and the boundary against RPA and no-code. Argue with that page if you think the fourth band does not exist.

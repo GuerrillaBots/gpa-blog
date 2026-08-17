@@ -1,5 +1,6 @@
 import { getPost, getAllPosts } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypeSlug from "rehype-slug";
 import ViewCounter from "@/components/ViewCounter";
 import ReactionToast from "@/components/ReactionToast";
 import AuthorBadge from "@/components/AuthorBadge";
@@ -83,7 +84,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
           {/* Body */}
           <div className="prose max-w-none">
-            <MDXRemote source={post.content} />
+            <MDXRemote
+              source={post.content}
+              options={{ mdxOptions: { rehypePlugins: [rehypeSlug] } }}
+            />
           </div>
 
           {/* Author — at the bottom */}
