@@ -2,18 +2,25 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f0ede5;
-  --bg-card: #e8e4d8;
-  --bg-tag: #e2ddd4;
-  --border: #d0cbbf;
-  --text-head: #1a2a12;
-  --text-body: #2e3a20;
-  --text-muted: #6b7a55;
+  --bg: #efebe1;
+  --bg-card: #e4ddcb;
+  --bg-tag: #ddd5c1;
+  --border: #c6bda6;
+  --text-head: #16240f;
+  --text-body: #26301a;
+  --text-muted: #5d6b49;
   --sage: #8b9b6a;
   --military: #1b2f1a;
   --military-hover: #243d22;
   --cream: #f5f0e8;
-  --accent: #5a7a3a;
+  --accent: #46612c;
+
+  /* Stronger tier — used by blog prose for real contrast */
+  --olive: #435a30;
+  --sage-strong: #75894f;
+  --beige: #e2d8c2;
+  --beige-deep: #d8ccb2;
+  --border-strong: #b5aa8e;
 }
 
 body {
@@ -33,27 +40,29 @@ h1, h2, h3, h4 {
 /* Blog prose */
 .prose p {
   margin-bottom: 1.5rem;
-  color: #3a4a28;
+  color: #2c3a1e;
 }
 
 .prose h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
+  margin-top: 3rem;
+  margin-bottom: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 2px solid var(--olive);
   color: var(--text-head);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.018em;
+  line-height: 1.25;
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--sage);
-  padding-left: 1.25rem;
+  border-left: 5px solid var(--military);
   margin: 2rem 0;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   color: var(--military);
   font-style: italic;
-  background: var(--bg-card);
-  padding: 1rem 1.25rem;
+  background: var(--beige-deep);
+  padding: 1.15rem 1.4rem;
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
@@ -69,7 +78,8 @@ h1, h2, h3, h4 {
 }
 
 .prose hr {
-  border-color: var(--border);
+  border: 0;
+  border-top: 1px solid var(--border);
   margin: 2.5rem 0;
 }
 
@@ -102,7 +112,7 @@ h1, h2, h3, h4 {
 .prose ol {
   margin: 0 0 1.5rem;
   padding-left: 1.35rem;
-  color: #3a4a28;
+  color: #2c3a1e;
 }
 
 .prose ul {
@@ -124,7 +134,7 @@ h1, h2, h3, h4 {
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 1px;
-  background: var(--sage);
+  background: var(--olive);
   transform: rotate(45deg);
 }
 
@@ -138,7 +148,7 @@ h1, h2, h3, h4 {
 }
 
 .prose ol li::marker {
-  color: var(--sage);
+  color: var(--olive);
   font-weight: 600;
 }
 
@@ -146,13 +156,12 @@ h1, h2, h3, h4 {
 .table-wrap {
   margin: 2.25rem 0;
   overflow-x: auto;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   border-radius: 0.85rem;
-  background: color-mix(in srgb, var(--cream) 72%, transparent);
-  backdrop-filter: blur(6px);
+  background: var(--cream);
   box-shadow:
-    0 1px 2px rgba(26, 42, 18, 0.04),
-    0 8px 24px -12px rgba(26, 42, 18, 0.16);
+    0 1px 2px rgba(22, 36, 15, 0.07),
+    0 14px 34px -16px rgba(22, 36, 15, 0.3);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -167,25 +176,27 @@ h1, h2, h3, h4 {
 .table-wrap thead th {
   position: sticky;
   top: 0;
-  background: color-mix(in srgb, var(--bg-card) 88%, transparent);
-  backdrop-filter: blur(8px);
+  background: var(--military);
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.075em;
   text-transform: uppercase;
-  color: var(--military);
+  color: var(--cream);
   text-align: left;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 1rem;
   white-space: nowrap;
 }
 
+.table-wrap thead th + th {
+  border-left: 1px solid rgba(245, 240, 232, 0.16);
+}
+
 .table-wrap tbody td {
-  padding: 0.78rem 1rem;
+  padding: 0.82rem 1rem;
   vertical-align: top;
-  color: #3a4a28;
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  color: #2c3a1e;
+  border-bottom: 1px solid var(--border);
 }
 
 .table-wrap tbody tr:last-child td {
@@ -193,7 +204,7 @@ h1, h2, h3, h4 {
 }
 
 .table-wrap tbody tr:nth-child(even) {
-  background: color-mix(in srgb, var(--bg-card) 34%, transparent);
+  background: var(--beige);
 }
 
 /* First column reads as the row label */
@@ -202,22 +213,25 @@ h1, h2, h3, h4 {
   color: var(--text-head);
 }
 
-.table-wrap tbody td strong,
-.table-wrap thead th strong {
+.table-wrap tbody td strong {
   color: var(--military);
+}
+
+/* Header is dark now, so bold inside it must stay light */
+.table-wrap thead th strong {
+  color: var(--cream);
 }
 
 /* Callout / router cards: a paragraph that opens with a bold lead-in.
    Excludes paragraphs that are nothing but bold (section labels). */
 .prose p:has(> strong:first-child):not(:has(> strong:only-child)) {
-  background: color-mix(in srgb, var(--cream) 66%, transparent);
-  backdrop-filter: blur(6px);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--sage);
+  background: var(--beige);
+  border: 1px solid var(--border-strong);
+  border-left: 5px solid var(--olive);
   border-radius: 0.7rem;
-  padding: 1rem 1.15rem;
+  padding: 1.05rem 1.25rem;
   margin-bottom: 1rem;
-  box-shadow: 0 1px 2px rgba(26, 42, 18, 0.035);
+  box-shadow: 0 1px 2px rgba(22, 36, 15, 0.06);
 }
 
 @media (max-width: 640px) {

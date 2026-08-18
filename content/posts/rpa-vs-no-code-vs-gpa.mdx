@@ -84,7 +84,7 @@ Two things actually broke it.
 
 **The tools recorded clicks without understanding the work.** A recorder that captures "click at coordinate, type this string, click again" has no model of what the step was for. So when the portal moves a button or renames a field, the automation has no basis for recovery. It cannot reason that the step was "find the invoice number and put it in the search box" because it never knew that. It only knew where the box used to be.
 
-That second failure is why brittleness became the defining complaint about business-built automation, and it is a solvable problem. It is solvable by putting the understanding into the tool. It is not solvable by simplifying the interface further, which is what most of the industry tried.
+That second failure is why brittleness became the defining complaint about business-built automation. It is solvable, but only by putting the understanding into the tool. Simplifying the interface further does nothing for it, which is what most of the industry spent five years trying anyway.
 
 ---
 
@@ -117,7 +117,7 @@ The row that decides everything is the second one. Who owns it after go-live. RP
 
 **GPA fits the middle, which is the largest and least served band.** A weekly reconciliation across three portals and a spreadsheet. A monthly MIS pull that touches four systems. A recurring download, rename, check, upload loop that takes two hours and has taken two hours every week for three years. High enough frequency that the person doing it feels it. Too low in volume to ever clear a CoE business case.
 
-That band is not small. It is also the band both major RPA vendors have quietly stopped writing content for, because the person who does that work cannot sign a six-figure contract.
+That band is large, and it is the one both major RPA vendors have quietly stopped writing for, because the person doing that work cannot sign a six-figure contract.
 
 ![A raised concrete threshold running the width of the frame. A handful of very large crates have been rolled cleanly over it and sit on the platform above. Below the lip, hundreds of much smaller crates are jammed against the vertical face, none of them able to clear the height, piled back into the distance.](/images/posts/rpa-vs-no-code-vs-gpa/img-1.png)
 
@@ -125,7 +125,7 @@ That band is not small. It is also the band both major RPA vendors have quietly 
 
 ## This is not a pick-one decision
 
-The automation journey is not a ladder where you start with no-code, graduate to RPA, and arrive somewhere final. Most companies of any size will run all three at once, on different processes, and that is the correct end state rather than a transitional mess.
+There is no ladder here, where you start with no-code, graduate to RPA and arrive somewhere final. Most companies of any size run all three at once on different processes, and that is the correct end state rather than a mess to be tidied up later.
 
 Keep RPA on the structured, high-volume core. Let the trivial single-system stuff stay in whatever no-code tool is already bundled with your licences. Put GPA on the recurring cross-system work that was never going to get funded.
 
